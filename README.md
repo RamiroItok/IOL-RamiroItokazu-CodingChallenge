@@ -1,32 +1,16 @@
 
-# InvertirOnline.com Coding Challenge
+# Solución para Coding Challenge IOL 
 
-Bienvenido!
+Como solución a este problema hice que FormaGeométrica sea una clase abstracta y que las formas hereden esa clase padre, con sus méotodos, como CalcularArea() y CalularPerimetro(), de esta manera cada figura tendría su propio calculo de cada método. Además, separé las responsabilidades, de tal manera que esté desacoplado, separando los reportes y las figuras. 
 
-Nos encontramos en la búsqueda de desarrolladores .NET para que se incorporen a nuestro equipo. Después de múltiples procesos de selección, llegamos a la conclusión de que el código habla por si mismo. Con lo cual si te sentís dispuesto a afrontar el desafío, por favor tomate un rato para jugar con el problema y resolverlo.
+Con respecto a los idiomas, creé una nueva clase llamada Idiomas. Con respecto a la definición de los lenguajes, tenía mis dudas en definirlo como una tupla o un diccionario de datos. Por lo que opté por utilizar una tupla en vez de un diccionario, ya que al tener los lenguajes, van a ser datos que no van a modificarse a futuro, además, de que una tupla me parece una manera más simple. La clase Idiomas, contiene un tupla de Lenguajes, en donde, cada lenguaje contará con un archivo de recursos el cual contedrá cada una de las traducciones. De esta manera, en el caso de que se desee agregar un nuevo idioma, a nivel código solo se deberá agregar un elemento a la tupla. Mientras que para las traducciones, se deberá crear un nuevo archivo de recurso. 
 
-### Cómo participar del proceso?
+Por otra parte, para calcular las variables de cada figura, creé otra clase abstracta llamada Reporte. De tal manera, que se trate como una clase padre sobre una subclase llamada Generador, el cual implementa el método Imprimir(). 
 
-Abajo detallamos el problema a resolver, cuando consideres que está resuelto, **no** envíes pull request. Enviá un mail a busquedas.it@invertironline.com con tu resolución (con un link de descarga al repositorio de tu preferencia), y si tenés algún comentario sobre tu implementación, también podés agregarlo ahí.
+### Comentarios
 
-### El problema
+Tuve que realizar una actualización de los paquetes nuget.
 
-Tenemos un método que genera un reporte en base a una colección de formas geométricas, procesando algunos datos para presentar información extra. La firma del método es:
+Desde ya, muchas gracias por la oportunidad de realizar el Challenge. 
 
-```csharp
-public static string Imprimir(List<FormaGeometrica> formas, int idioma)
-```
-
-Al mismo tiempo, encontramos muy díficil el poder agregar o bien una nueva forma geométrica, o imprimir el reporte en otro idioma. Nos gustaría poder dar soporte para que el usuario pueda agregar otros tipos de formas u obtener el reporte en otros idiomas, pero extender la funcionalidad del código es muy doloroso. ¿Nos podrías dar una mano a refactorear la clase FormaGeometrica? Dentro del código encontrarás un TODO con nuevos requerimientos a satisfacer una vez completada la refactorización.
-
-Acompañando al proyecto encontrarás una serie de tests unitarios (librería NUnit) que describen el comportamiento del método Imprimir. **Se puede modificar cualquier cosa del código y de los tests, con la única condición que los tests deben pasar correctamente al entregar la solución.** 
-
-Se agradece también la inclusión de nuevos tests unitarios para validar el comportamiento de la nueva funcionalidad agregada.
-
-### Cómo funciona
-
-Lo que te encontrás al levantar la .sln es una librería con el objeto de negocio FormaGeometrica, y un pequeño proyecto con test unitarios sobre el método de impresión de reporte.
-
-La resolución es libre y cómo encarar el problema queda en el criterio de quien lo resuelva!
-
-**¡¡Buena suerte!!**
+**¡¡Saludos!!**
